@@ -1,4 +1,4 @@
-package com.example.myapplication
+package mn.erdenee.copy
 
 import org.junit.Test
 
