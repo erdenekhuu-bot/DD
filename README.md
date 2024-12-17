@@ -1,2 +1,2 @@
 The simplest kotlin based android application. Sorry guys i have issue declare name...
-I will try make GPS or navigation with google map, 
+I will try make GPS or navigation with google map, and connect REST API on Spring boot localhost
