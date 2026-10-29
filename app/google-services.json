@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "754409252931",
+    "project_id": "ghostbuster-9d9bf",
+    "storage_bucket": "ghostbuster-9d9bf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754409252931:android:894cae56094bf7be75ccf6",
+        "android_client_info": {
+          "package_name": "mn.erdenee.copy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-d-uiKkw942Fh1Lp_2q_WY-1Lr6Ig-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754409252931:android:4a5e961f278e0be975ccf6",
+        "android_client_info": {
+          "package_name": "mn.erdenee.mn_ghostbuster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-d-uiKkw942Fh1Lp_2q_WY-1Lr6Ig-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754409252931:android:17cbf1544e8c672875ccf6",
+        "android_client_info": {
+          "package_name": "mn.erdenee.ubquizs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-d-uiKkw942Fh1Lp_2q_WY-1Lr6Ig-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
