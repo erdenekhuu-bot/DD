@@ -1,3 +1,45 @@
 <resources>
     <string name="app_name">Copy</string>
+    <string name="podcasts_title">Podcasts</string>
+    <string name="featured_discovery">FEATURED DISCOVERY</string>
+    <string name="the_quiet_mind">The Quiet Mind</string>
+
+    <!-- Episode 1 -->
+    <string name="ep1_meta">OCT 24 • 48 MIN</string>
+    <string name="ep1_title">The Architecture of Silence</string>
+    <string name="ep1_host">Hosted by Julian Vane</string>
+    <string name="ep1_desc">Exploring how minimalist design in urban environments affects neuroplasticity and&#8230;</string>
+
+    <!-- Episode 2 -->
+    <string name="ep2_meta">OCT 20 • 52 MIN</string>
+    <string name="ep2_title">The Ethics of AI Narratives</string>
+    <string name="ep2_host">Hosted by Dr. Elena Thorne</string>
+    <string name="ep2_desc">A deep dive into how synthetic voices are changing our emotional connection to&#8230;</string>
+
+    <!-- Episode 3 -->
+    <string name="ep3_meta">OCT 18 • 35 MIN</string>
+    <string name="ep3_title">Deep Work Foundations</string>
+    <string name="ep3_host">Hosted by Marcus Aurel</string>
+    <string name="ep3_desc">Practical rituals for establishing a state of flow in an age of constant notification&#8230;</string>
+
+    <!-- Episode 4 -->
+    <string name="ep4_meta">OCT 15 • 64 MIN</string>
+    <string name="ep4_title">Sonic Textures in Media</string>
+    <string name="ep4_host">Hosted by Sarah Klang</string>
+    <string name="ep4_desc">How sound engineers create invisible emotional layers using sub-bass and room&#8230;</string>
+
+    <!-- Player -->
+    <string name="player_title">The Architecture of Silence</string>
+    <string name="player_subtitle">Julian Vane • 21:40 / 48:00</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_menu">Menu</string>
+    <string name="cd_profile">Profile</string>
+    <string name="cd_more_options">More options</string>
+    <string name="cd_played">Completed</string>
+    <string name="cd_replay_10">Rewind 10 seconds</string>
+    <string name="cd_pause">Pause</string>
+    <string name="cd_nav_home">Home</string>
+    <string name="cd_nav_search">Search</string>
+    <string name="cd_nav_library">Library</string>
 </resources>

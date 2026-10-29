@@ -1,28 +1,577 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff1A1A1A"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:background="@color/bg_dark"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Top App Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="FEATURED DISCOVERY"
-        android:textColor="#ffCDBDFF"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The Quiet Mind"
+        android:minHeight="56dp"
+        android:paddingHorizontal="@dimen/screen_padding_horizontal"
         android:paddingVertical="8dp"
-        android:textSize="32dp"
-        android:textColor="#ffE3E2E2"/>
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_content_width">
 
+        <ImageView
+            android:id="@+id/btnMenu"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_menu"
+            android:padding="6dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvAppTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="@string/podcasts_title"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnMenu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_profile"
+            android:src="@drawable/bg_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding_horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
+
+            <!-- Header: Featured Discovery -->
+            <TextView
+                android:id="@+id/tvFeaturedSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.08"
+                android:text="@string/featured_discovery"
+                android:textColor="@color/accent_purple"
+                android:textSize="@dimen/featured_subtitle_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvFeaturedTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="16dp"
+                android:text="@string/the_quiet_mind"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/featured_title_size"
+                android:textStyle="bold" />
+
+            <!-- Episode Card 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_margin_bottom"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_toStartOf="@id/ivCard1More"
+                            android:letterSpacing="0.06"
+                            android:text="@string/ep1_meta"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/card_meta_size"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivCard1More"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/cd_more_options"
+                            android:src="@drawable/ic_more_vert" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/ep1_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/card_title_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/ep1_host"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/card_host_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:text="@string/ep1_desc"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/card_desc_size" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Episode Card 2 (Completed) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_margin_bottom"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_toStartOf="@id/ivCard2Check"
+                            android:letterSpacing="0.06"
+                            android:text="@string/ep2_meta"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/card_meta_size"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivCard2Check"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/cd_played"
+                            android:src="@drawable/ic_check_circle" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/ep2_title"
+                        android:textColor="@color/text_played_title"
+                        android:textSize="@dimen/card_title_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/ep2_host"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/card_host_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:text="@string/ep2_desc"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/card_desc_size" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Episode Card 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_margin_bottom"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_toStartOf="@id/ivCard3More"
+                            android:letterSpacing="0.06"
+                            android:text="@string/ep3_meta"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/card_meta_size"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivCard3More"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/cd_more_options"
+                            android:src="@drawable/ic_more_vert" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/ep3_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/card_title_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/ep3_host"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/card_host_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:text="@string/ep3_desc"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/card_desc_size" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Episode Card 4 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_margin_bottom"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_toStartOf="@id/ivCard4More"
+                            android:letterSpacing="0.06"
+                            android:text="@string/ep4_meta"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/card_meta_size"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivCard4More"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/cd_more_options"
+                            android:src="@drawable/ic_more_vert" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/ep4_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/card_title_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/ep4_host"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/card_host_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:text="@string/ep4_desc"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/card_desc_size" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Floating Mini Player Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/miniPlayerCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/surface_player"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_content_width"
+        app:strokeColor="@color/surface_card_stroke"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Progress Bar at Top of Player -->
+            <ProgressBar
+                android:id="@+id/playerProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="2.5dp"
+                android:max="100"
+                android:progress="45"
+                android:progressDrawable="@drawable/player_progress" />
+
+            <!-- Player Content Controls -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="8dp">
+
+                <!-- Waveform Thumbnail Art -->
+                <ImageView
+                    android:id="@+id/ivPlayerThumb"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_album_art"
+                    android:contentDescription="@string/player_title"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_waveform"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Track Info -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnReplay10"
+                    app:layout_constraintStart_toEndOf="@id/ivPlayerThumb"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvPlayerTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/player_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPlayerSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/player_subtitle"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- Replay 10 Sec Button -->
+                <ImageView
+                    android:id="@+id/btnReplay10"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/cd_replay_10"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_replay_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnPause"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Pause Pill Button -->
+                <ImageView
+                    android:id="@+id/btnPause"
+                    android:layout_width="44dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_player_play_btn"
+                    android:contentDescription="@string/cd_pause"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="7dp"
+                    android:src="@drawable/ic_pause"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:background="@color/bg_dark"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_nav_home"
+            android:padding="14dp"
+            android:src="@drawable/ic_nav_home" />
+
+        <ImageView
+            android:id="@+id/navSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_nav_search"
+            android:padding="14dp"
+            android:src="@drawable/ic_nav_search" />
+
+        <ImageView
+            android:id="@+id/navLibrary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_nav_library"
+            android:padding="14dp"
+            android:src="@drawable/ic_nav_library" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

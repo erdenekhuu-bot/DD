@@ -2,4 +2,25 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- App Theme Colors -->
+    <color name="bg_dark">#0E0E12</color>
+    <color name="surface_card">#19191E</color>
+    <color name="surface_card_stroke">#25252D</color>
+    <color name="surface_player">#1F1E26</color>
+    <color name="accent_purple">#B8A7FF</color>
+    <color name="accent_purple_container">#32284C</color>
+    <color name="accent_purple_button">#C8B8FF</color>
+    <color name="player_btn_icon">#1A1230</color>
+    <color name="player_progress_track">#2C2B36</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#EDEDF0</color>
+    <color name="text_secondary">#A39EB2</color>
+    <color name="text_muted">#716C7D</color>
+    <color name="text_played_title">#B0AEC0</color>
+
+    <!-- Navigation Colors -->
+    <color name="nav_icon_unselected">#6E6A7D</color>
+    <color name="nav_icon_selected">#FFFFFF</color>
 </resources>
