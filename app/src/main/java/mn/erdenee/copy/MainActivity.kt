@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         music = MediaPlayer.create(this, R.raw.background)
         val btnPlayPause = findViewById<ImageView>(R.id.btnPause)
+
         btnPlayPause?.setOnClickListener {
             play()
         }
