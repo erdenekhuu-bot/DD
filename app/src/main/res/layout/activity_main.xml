@@ -100,28 +100,18 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
                             android:layout_marginEnd="8dp"
-                            android:layout_toStartOf="@id/ivCard1More"
                             android:letterSpacing="0.06"
                             android:text="@string/ep1_meta"
                             android:textColor="@color/text_muted"
                             android:textSize="@dimen/card_meta_size"
                             android:textStyle="bold" />
 
-                        <ImageView
-                            android:id="@+id/ivCard1More"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:contentDescription="@string/cd_more_options"
-                            android:src="@drawable/ic_more_vert" />
                     </RelativeLayout>
 
                     <TextView
@@ -149,53 +139,6 @@
                         android:lineSpacingExtra="2dp"
                         android:maxLines="2"
                         android:text="@string/ep1_desc"
-                        android:textColor="@color/text_muted"
-                        android:textSize="@dimen/card_desc_size" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Episode Card 2 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/card_margin_bottom"
-                app:cardBackgroundColor="@color/surface_card"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="0dp"
-                app:strokeColor="@color/surface_card_stroke"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/card_padding">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="@string/ep3_title"
-                        android:textColor="@color/text_primary"
-                        android:textSize="@dimen/card_title_size"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/ep3_host"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="@dimen/card_host_size" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:ellipsize="end"
-                        android:lineSpacingExtra="2dp"
-                        android:maxLines="2"
-                        android:text="@string/ep3_desc"
                         android:textColor="@color/text_muted"
                         android:textSize="@dimen/card_desc_size" />
 
@@ -265,10 +208,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="12dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btnReplay10"
+                    app:layout_constraintEnd_toStartOf="@id/btnPause"
                     app:layout_constraintStart_toEndOf="@id/ivPlayerThumb"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -296,21 +239,7 @@
 
                 </LinearLayout>
 
-                <!-- Replay 10 Sec Button -->
-                <ImageView
-                    android:id="@+id/btnReplay10"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="6dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="@string/cd_replay_10"
-                    android:padding="6dp"
-                    android:src="@drawable/ic_replay_10"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btnPause"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <!-- Pause Pill Button -->
+                <!-- Play/Pause Button -->
                 <ImageView
                     android:id="@+id/btnPause"
                     android:layout_width="44dp"

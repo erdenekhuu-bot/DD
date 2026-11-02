@@ -1,20 +1,40 @@
 package mn.erdenee.copy
 
+import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    private var music: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        music = MediaPlayer.create(this, R.raw.background)
+        val btnPlayPause = findViewById<ImageView>(R.id.btnPause)
+        btnPlayPause?.setOnClickListener {
+            play()
         }
+    }
+
+    fun play() {
+        music?.let { player ->
+            val btnPlayPause = findViewById<ImageView>(R.id.btnPause)
+            if (player.isPlaying) {
+                player.pause()
+                btnPlayPause?.setImageResource(R.drawable.ic_play)
+            } else {
+                player.start()
+                btnPlayPause?.setImageResource(R.drawable.ic_pause)
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        music?.release()
+        music = null
     }
 }
